@@ -31,7 +31,7 @@ jobs:
     # Build and push the image to Azure Container Registry 
     - name: Build and Push container to ACR
       run: |
-        docker build --file=taskapp/taskapp/Dockerfile -t ${{ secrets.REGISRTY_NAME }}.azurecr.io/dotnetframeworkwc:${{ github.sha }} .
+        docker build --file=taskapp/taskapp/Dockerfile -t ${{ secrets.REGISTRY_NAME }}.azurecr.io/dotnetframeworkwc:${{ github.sha }} .
         docker push ${{ secrets.REGISTRY_NAME }}.azurecr.io/dotnetframeworkwc:${{ github.sha }}  
           
     # Deploy your container to App Service 
